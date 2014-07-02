@@ -9,6 +9,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'noty-rails'
+
 gem 'bootstrap-sass', '~> 3.2.0'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
