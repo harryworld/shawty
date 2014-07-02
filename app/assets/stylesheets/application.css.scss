@@ -5,3 +5,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  padding-top: 50px;
+}
+
+.container {
+  margin: 0 auto;
+
+  .starter-template {
+    padding: 40px 15px;
+    text-align: center;
+  }
+}
