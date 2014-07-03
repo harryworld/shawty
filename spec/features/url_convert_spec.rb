@@ -13,5 +13,7 @@ feature 'convert the url' do
       click_on 'Submit'
     end
     expect(current_path).to eq('/url')
+    expect(page).to have_content 'Success'
+    expect(page).to have_content 'Visit Link'
   end
 end
