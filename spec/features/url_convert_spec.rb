@@ -16,4 +16,14 @@ feature 'convert the url' do
     expect(page).to have_content 'Success'
     expect(page).to have_content 'Visit Link'
   end
+
+  scenario 'shortens URL' do
+    visit '/'
+    within('#link') do
+      fill_in 'url', :with => 'http://www.google.com/'
+      click_on 'Submit'
+    end
+    expect(page).to have_content 'Converted'
+    expect(page).to have_content 'http://www.google.com/'
+  end
 end
