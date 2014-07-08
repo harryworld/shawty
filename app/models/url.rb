@@ -1,5 +1,5 @@
 class Url < ActiveRecord::Base
-  before_save :check_url_http
+  before_save :check_url_http, :convert_url
 
   validate :check_com
 
@@ -11,5 +11,13 @@ class Url < ActiveRecord::Base
     unless self.original.include? ".com"
       self.errors.add :base, "the original URL should contain .com"
     end
+  end
+
+  def convert_url
+    self.converted = 'http://localhost:3000/' + random_string
+  end
+
+  def random_string
+    (0...6).map { (65 + rand(26)).chr }.join
   end
 end

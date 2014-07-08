@@ -34,4 +34,21 @@ RSpec.describe Url, :type => :model do
   end
 
   it "is invalid if the url does not start with http"
+
+  it "is having 6 characters in random string" do
+    url = Url.new
+    url.original = "http://www.google.com/"
+    url.save
+
+    str = url.random_string
+    expect(str.length).to eq 6
+  end
+
+  it "is having converted url" do
+    url = Url.new
+    url.original = "http://www.google.com/"
+    url.save
+
+    expect(url.converted).not_to be_nil
+  end
 end
